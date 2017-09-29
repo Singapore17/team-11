@@ -3,7 +3,6 @@
  */
 
 import org.joda.time.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -35,6 +34,7 @@ public class Main {
         A1.lng = 103.870111;
         A1.transport = true;
         A1.care = false;
+        A1.UID = "Allie";
 
         user B1 = new user();
         DateTime[] DATE2 = new DateTime[2];
@@ -61,6 +61,17 @@ public class Main {
         B2.transport = true;
         B2.care = true;
         B2.UID = "Andie";
+
+        user B3 = new user();
+        DateTime[] DATE5 = new DateTime[2];
+        DATE4[0] = date5;
+        DATE4[1] = date9;
+        B3.timeSlots.add(DATE4);
+        B3.lat = 1.373235;
+        B3.lng = 103.893929;
+        B3.transport = true;
+        B3.care = true;
+        B3.UID = "BB";
 
         B1.score = (int) A1.returnScore(B1);
         B2.score = (int) A1.returnScore(B2);

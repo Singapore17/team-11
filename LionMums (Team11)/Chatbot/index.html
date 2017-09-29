@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DOT Chatbot</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/firebase-app.js"></script>
+<script type="text/javascript" src="js/firebase-database.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body class="bg-default">
+
+<div class="restrict-view">
+	<div class="mobile-content container-fluid">
+		<div class="topbar">
+			<div class="msgIcon"><img src="img/dot_logo.jpg" height="42" width="42"></div>
+			<span class="msgContact">Daughters of Tomorrow</span>
+		</div>
+
+		<div id="msgContainer"></div>
+
+		<div class="inputbar">
+			<form id="sendMsgForm">
+				<div class="row no-gutter">
+					<div class="col-xs-9 p-0">
+						<input type="text" id="msgInput" class="form-control no-bdr col-xs-9" placeholder="Message">
+					</div>
+					<div class="col-xs-3 p-0">
+						<button type="submit" id="submitBtn" class="btn btn-default no-bdr bg-default col-xs-12"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<a class="btn btn-default" id="responseBtn0" role="button">Hello</a>
+<a class="btn btn-default" id="responseBtn1" role="button">Services</a>
+<a class="btn btn-default" id="responseBtn2" role="button">List of dates</a>
+<a class="btn btn-default" id="responseBtn3" role="button">New dates</a>
+<a class="btn btn-default" id="responseBtn4" role="button">List of mothers</a>
+<a class="btn btn-default" id="responseBtn5" role="button">Notify</a>
+
+</body>
+</html>

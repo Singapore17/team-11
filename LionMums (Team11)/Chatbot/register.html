@@ -1,0 +1,229 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DOT Chatbot</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/firebase-app.js"></script>
+<script type="text/javascript" src="js/firebase-database.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+
+	<body> 
+		<form id="registerForm">
+
+			<table border = "1"> 
+				<tr> 
+					<td><label type = "text">Name</label></td> 
+					<td><input id="inputName" type = "text" name = "name" value="Jane Tan"></input></td> 
+				</tr> 
+			
+				<tr> 
+					<td><label type = "text">Phone</label></td> 
+					<td><input id="inputPhone" type = "text" name = "phone" value="98765432"></input></td> 
+				</tr> 
+				
+				<tr> 
+					<td><label type = "text">Race</label></td> 
+					<td>
+						<select id="inputRace" name="race">
+							<option value = "Chinese">Chinese</option>
+							<option value = "Malay">Malay</option>
+							<option value = "Indian">Indian</option>
+							<option value = "Eurasian">Eurasian</option>
+						</select>
+					</td> 
+				</tr> 
+				
+				<tr> 
+					<td><label type="language">Language</label></td> 
+					<td><select id="inputLang" multiple name = "language">
+							<option value = "English">English</option>
+							<option value = "Chinese">Chinese</option>
+							<option value = "Malay">Malay</option>
+							<option value = "Tamil">Tamil</option>
+						</select>
+					</td> 
+				</tr> 
+				
+				<tr> 
+					<td><label type="location">Address</label></td> 
+					<td><input type="text" name = "address"></input></td> 
+				</tr> 
+				<tr> 
+					<td><label type="location">Postal</label></td> 
+					<td><input id="inputPostal" type="text" name = "location" value="526230"></input></td> 
+				</tr> 
+				
+				<tr> 
+					<td><label type = "text">Children</label></td> 
+					<td>
+						<table border = "1"> 
+							<tr> 
+								<th> Child </th> 
+								<th> Age </th>
+							<tr> 
+							
+							<tr> 
+								<td>1</td>
+								<td><input type = "text" name = "age1" ></td>
+							<tr> 
+							
+							<tr> 
+								<td>2</td> 
+								<td><input type = "text" name = "age2" ></td>
+							<tr> 
+							
+							<tr> 
+								<td>3</td>
+								<td><input type = "text" name = "age3" ></td>
+							<tr> 
+						</table> 
+					</td> 
+				</tr> 
+				
+				<tr>
+					<td><label type = "text">Do you have pets?</label></td>
+					<td>
+						<select name="pets">
+							<option value = "no" >No</option>
+							<option value = "yes" >Yes</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><label type = "text">Have you been convicted of a criminal offence?</label></td>
+					<td>
+						<select name="offence">
+							<option value = "no" >No</option>
+							<option value = "yes" >Yes</option>
+						</select>
+					</td>
+				</tr>
+				
+				
+				<tr> 
+					<td><label type = "text">Type of user</label></td> 
+					<td>
+						<select multiple name = "userType">
+							<option value="A">Require child care support</option> 
+							<option value="B">Providing child care support</option> 
+						</select> 
+					</td> 
+				</tr> 
+				
+				
+				<tr> 
+					<td><label type = "text">If REQUIRING childcare support:<br>What is the maximum you are willing to pay?</label></td> 
+					<td><input type = "text" name = "max"></input></td> 
+				</tr> 
+				
+				<tr> 
+					<td><label type = "text">If PROVIDING childcare support:<br>What is the minimum you are willing to accept?</label></td> 
+					<td><input type = "text" name = "min"></input></td> 
+				</tr> 
+				
+				
+				<tr>
+					<td><label type = "text">Service needed/providing</label></td> 
+					<td> 
+					<select id="inputType" name = "serviceType">
+						<option value="care" selected>Child minding</option> 
+						<option value="transport">Bringing children around</option> 
+					</select> 
+					</td> 
+				</tr> 
+				
+			
+				<tr> 
+					<td><label type = "text">How often will you use these services?</label></td> 
+					<td> 
+						<select name="frequency">
+							<option value = "daily">Daily</option>
+							<option value = "weekly">Weekly</option>
+							<option value = "monthly">Monthly</option>
+						</select>
+					</td> 
+				</tr> 
+				
+				<tr> 
+					<td><label type = "text">Duration of service</label></td> 
+					<td> 
+						<select name="duration">
+							<option value = "adHoc">Ad-hoc</option>
+							<option value = "longTerm">Long-term</option>
+						</select>
+					</td> 
+				</tr> 
+			
+			
+				<tr> 
+					<td><label type = "text">When will you require these services?</label></td> 
+					<td> 
+						<table border = "1"> 
+							<tr> 
+								<th>Day of week</th>
+								<th>Start Time</th>
+								<th>End Time</th>
+								
+							</tr> 
+							<tr> 
+								<td>Monday</td> 
+								<td><input type = "text" name = "1S"></input></td>
+								<td><input type = "text" name = "1E"></input></td>
+							</tr> 
+							
+							<tr> 
+								<td>Tuesday</td> 
+								<td><input type = "text" name = "2S"></input></td>
+								<td><input type = "text" name = "2E"></input></td>
+							</tr> 
+							
+							<tr> 
+								<td>Wednesday</td> 
+								<td><input type = "text" name = "3S"></input></td>
+								<td><input type = "text" name = "3E"></input></td>
+							</tr> 
+							
+							<tr> 
+								<td>Thursday</td> 
+								<td><input type = "text" name = "4S"></input></td>
+								<td><input type = "text" name = "4E"></input></td>
+							</tr> 
+							
+							<tr> 
+								<td>Friday</td> 
+								<td><input type = "text" name = "5S"></input></td>
+								<td><input type = "text" name = "5E"></input></td>
+							</tr> 
+							
+							<tr> 
+								<td>Saturday</td> 
+								<td><input type = "text" name = "6S"></input></td>
+								<td><input type = "text" name = "6E"></input></td>
+							</tr> 
+							
+							<tr> 
+								<td>Sunday</td> 
+								<td><input type = "text" name = "7S"></input></td>
+								<td><input type = "text" name = "7E"></input></td>
+							</tr> 
+			
+						</table> 
+					</td> 
+				</tr> 
+			</table> 
+			<br><br>
+			<input type = "submit">
+		</form> 
+		
+		
+	</body>
+</html> 
